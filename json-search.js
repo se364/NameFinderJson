@@ -1,4 +1,6 @@
 
+
+//the function goes thru when the button is clicked
 document.getElementById('myBtn').onclick = function(){
 
     let getName = document.getElementById('fname').value;
@@ -13,6 +15,8 @@ document.getElementById('myBtn').onclick = function(){
 
 };
 
+
+// json array is created
 let myArray =[
     {
         Name:"Jane Doe",
@@ -57,6 +61,8 @@ let myArray =[
 ];
 
 
+
+// this function finds the name from the json array
 function myFunction(name){
 
     //flag
@@ -64,11 +70,13 @@ function myFunction(name){
 
     name  = document.getElementById('fname').value;
 
-
+    // loop to go through the array and compare with name input
     for(let i = 0; i < myArray.length; i++  ){
-        let nameof = myArray[i].Name;
-        //let find = nameof.toLowerCase();
 
+        // finds the name from the array
+        let nameof = myArray[i].Name;
+
+        // Compares with the name from the json array with the input array
         if(nameof.toLowerCase().includes(name.toLowerCase()))
         {
             document.getElementById("print").innerHTML +=
@@ -85,7 +93,7 @@ function myFunction(name){
 
     }
 
-    //no match found
+    // if the name is not in the array
     if(valid === false)
     {
         document.getElementById("print").innerHTML = "<p>No matches found</p>";
